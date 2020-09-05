@@ -1,3 +1,4 @@
+//tag
 let http = require('http');
 let fs = require('fs');
 
@@ -14,8 +15,11 @@ let handleRequest = (request, response) => {
       fs.readFile('.' + request.url, null, function (error, data) {
           if (error) {
               response.writeHead(404);
-              response.write('Whoops! File not found!');
+              response.write('The page you requested is not available');
               console.log(request.url);
+          } else if (request.url === '/styles.css') {
+              response.writeHead(200, {'Content-type' : 'text/css'});
+              response.write(data);
           } else {
               response.write(data);
           }
