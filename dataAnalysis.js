@@ -1,18 +1,29 @@
-let Parser = require("rss-parser");
-let kmeans = require("node-kmeans");
-let w2v = require("word2vec");
-var fs = require('fs');
+var Parser = require('rss-parser');
+var Sentiment = require('sentiment');
 
 async function collectData(feed)
 {
 	let parser = new Parser();
 	let rss = await parser.parseURL(feed);
-	console.log(rss.title);
 
-	var corpus = fs.createWriteStream('corpus.txt');
-	rss.items.forEach(function (item) {console.log(item.description); corpus.write(item.description + "\n");});
-	corpus.end();
+	let titles = [];
+	let links = [];
+	rss.items.forEach(function (item) {titles.push(item.title); links.push(item.link);});
+	return {"titles": titles, "links": links};
 }
 
-collectData("https://rss.app/feeds/guZnePJxwzxvhiu5.xml");
-w2v.word2vec("corpus.txt", "test.json", [minCount = 0], null);
+async function analyzeSource(feed)
+{
+	let sentiment = new Sentiment();
+	let data = await collectData(feed);
+	let totalScore = 0;
+	let totalArticles = 0;
+	data.titles.forEach(function (item) {
+		if (item.includes("virus") || item.includes("pandemic") || item.includes("cases"))
+		{
+			totalScore +=  sentiment.analyze(item).score;
+			totalArticles++;
+		}
+	});
+	return {"averageScore": totalScore / totalArticles, "titles": data.titles, "links": data.links};
+}
