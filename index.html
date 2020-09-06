@@ -1,26 +1,44 @@
-<!doctype html>
-<html lang="en">
-<<<<<<< HEAD
-
-<head>
-    <title>Hello, world!</title>
-</head>
-
-<body>
-    <h1>Hello, world!</h1>
-</body>
-
-=======
+<!DOCTYPE html/>
+<html>
   <head>
-      <title>News Title Analysis</title>
-      <link rel="stylesheet" type="text/css" href="/styles.css"/>
-  </head>
+    <link rel="stylesheet" href="/styles.css"/>
 
+  </head>
   <body>
-    <ul class="taskbar">
-      <li class"taskbar"><a class="taskbar" href="index.html">Home</a></li>
-      <li class"taskbar"><a class="taskbar" href="about.html">About</a></li>
+    <div class="header">
+      <h1>Sentiment Analyzer for COVID-19 News</h1>
+    </div>
+    <ul class="topnav">
+      <li><a class="topnav" href="index.html">Home</a></li>
+      <li><a class="topnav" href="sources.html">Sources</a></li>
+      <li><a class="topnav" href="about.html">About</a></li>
+      <li><a class="topnav" href="https://github.com/rviral001/SentAnalyzer">GitHub</a></li>
     </ul>
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <h2>Sentiment Analysis</h2>
+          <h5>The graph displays the level of sentiment corresponding with each source</h5>
+          <canvas id="myChart"></canvas>
+          <img src="https://chart.googleapis.com/chart?cht=bvg&chtt=Average%20Sentiment%20Rating&chd=t%3A-1.1666666666666667%7C-0.375%7C-0.8666666666666667%7C-0.9444444444444444&chco=FF0000%2C0000FF%2C008000%2C00FF00&chdl=CNN%7CFOX%7CCBS%7CCNBC&chds=a&chxt=y&chbh=a%2C6%2C0&chdlp=b%7Cl&chs=400x265&chf=bg%2Cs%2C00000000">
+        </div>
+      </div>
+      <div class="rightcolumn">
+        <div class="card">
+          <ul>
+            <li><a href="http://rss.cnn.com/rss/cnn_health.rss">CNN</a></li> <br>
+            <li><a href="http://feeds.foxnews.com/foxnews/health">FOX</a></li> <br>
+            <li><a href="https://www.cbsnews.com/latest/rss/health">CBSN</a></li> <br>
+            <li><a href="https://www.cnbc.com/id/10000108/device/rss/rss.html">CNBC</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Contact Us</h3>
+            <a href="https://github.com/rviral001/tobedecided">GitHub</a>
+            <p> Dhruv Chanana <br> Rishit Viral </p>
+        </div>
+      </div>
+    </div>
+
   </body>
->>>>>>> 38b437294f85428d52cf7224afd42fe0f8507a50
 </html>

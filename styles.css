@@ -1,27 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #gggggg;
+  font-family: Courier New, Courier, monospace;
+  padding: 10px;
+  background-color: #594F4F;
 }
 
-ul.taskbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/* Header/Blog Title */
+.header {
+  padding: 20px;
+  text-align: center;
+  background: #547980;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #45ADA8;
+  list-style-type: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-li.taskbar {
+/* Style the topnav links */
+.topnav a {
   float: left;
-}
-
-li a.taskbar {
   display: block;
-  color: white;
+  color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-li a.taskbar:hover {
-  background-color: #111;
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #547980;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+li {
+  float: left;  
+}
+
+ul {
+  overflow: auto;
+}
+
+.barUrl{
+  width: 500px;
+  height:300px;
+  background-image: url(https://chart.googleapis.com/chart?cht=bvs&chtt=Some%20title%20or%20something&chd=t%3A19%2C19%2C21%2C14%2C19%2C11%2C10%2C18%2C19%2C400%7C4%2C3%2C2%2C3%2C0%2C0%2C3%2C4%2C2%2C2%7C10%2C8%2C2%2C1%2C18%2C9%2C20%2C21%2C19%2C11%7C2%2C1%2C1%2C1%2C1%2C7%2C3%2C6%2C2%2C7%7C1%2C0%2C0%2C1%2C2%2C1%2C0%2C0%2C0%2C0&chco=FF0000%2C0000FF%2C008000%2C00FF00%2C307000&chdl=Foo%7Cbar%7Cbin%7Cbash%7Cblah&chds=a&chxt=y%2Cx&chxl=1%3A%7C1%7C2%7C3%7C4%7C5%7C6%7C7%7C8%7C9%7C10&chbh=a%2C6%2C0&chdlp=b%7Cl&chs=400x265&chf=bg%2Cs%2C00000000);
 }
